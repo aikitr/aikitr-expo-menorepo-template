@@ -1,0 +1,9 @@
+packages:
+  - app/*
+  - packages/*
+  - tooling/*
+
+onlyBuiltDependencies:
+  - '@swc/core'
+  - esbuild
+
