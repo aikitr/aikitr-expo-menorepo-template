@@ -14,13 +14,13 @@
 ## 环境要求
 
 - Node.js `22.23.3`
-- pnpm `10.34.6`
+- pnpm `12.7.0`
 - iOS 原生构建需要 macOS 与 Xcode；也可使用 EAS Build
 - 小程序预览和真机调试需要微信开发者工具
 
 ```bash
 corepack enable
-corepack prepare pnpm@10.34.6 --activate
+corepack prepare pnpm@12.7.0 --activate
 pnpm install --frozen-lockfile
 ```
 

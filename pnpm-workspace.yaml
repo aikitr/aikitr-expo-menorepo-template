@@ -3,6 +3,11 @@ packages:
   - packages/*
   - tooling/*
 
-onlyBuiltDependencies:
-  - '@swc/core'
-  - esbuild
+allowBuilds:
+  '@parcel/watcher': false
+  '@swc/core': true
+  '@tarojs/binding': false
+  '@tarojs/cli': false
+  core-js: false
+  core-js-pure: false
+  esbuild: true
