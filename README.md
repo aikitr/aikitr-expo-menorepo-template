@@ -11,6 +11,38 @@
 | 共享代码      | TypeScript ESM、显式 `exports`                      |
 | 工程          | pnpm Workspace、Turborepo、ESLint、Prettier、Vitest |
 
+## 依赖版本管理
+
+外部依赖的版本统一维护在根目录的 `pnpm-workspace.yaml`，使用 [pnpm Catalogs](https://pnpm.io/catalogs)：
+
+| 版本表            | `package.json` 引用 | 管理范围                                        |
+| ----------------- | ------------------- | ----------------------------------------------- |
+| 默认 `catalog`    | `catalog:`          | ESLint、TypeScript、Vitest 等公共开发工具       |
+| `catalogs.mobile` | `catalog:mobile`    | Expo、React Native、移动端 React、UI 与样式依赖 |
+| `catalogs.weapp`  | `catalog:weapp`     | Taro、小程序 React、UI 与构建依赖               |
+
+应用仍在自己的 `package.json` 中声明所需依赖，只把版本号替换为对应的 catalog 引用。例如：
+
+```json
+{
+  "dependencies": {
+    "react": "catalog:mobile",
+    "@repo/api": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "catalog:"
+  }
+}
+```
+
+小程序使用 `"react": "catalog:weapp"`。两端分别维护 React、React DOM 与 `@types/react` 的兼容版本；公共工具共用默认版本表。内部包继续使用 `workspace:*`，共享 ESLint 配置的 `peerDependencies` 保留兼容范围。
+
+在同一仓库中新增应用时，可以复制 `app/mobile` 或 `app/weapp` 到 `app/*` 下的新目录，修改唯一的包名以及应用标识、路由等配置，保留 catalog 引用即可复用对应版本表。若新应用需要使用不同的框架版本，应新增命名 catalog 并修改该应用的引用。
+
+升级时修改 `pnpm-workspace.yaml` 中的版本，执行 `pnpm install` 更新并提交锁文件，再运行 `pnpm check`、`pnpm build:mobile` 和 `pnpm build:weapp`。Expo、React Native、React 及相关原生库，以及 Taro 配套包，分别按兼容组合升级。
+
+Catalog 只在当前 workspace 内共享；复制到独立仓库时也需要复制版本表，各仓库后续升级需分别同步。
+
 ## 环境要求
 
 - Node.js `22.23.3`

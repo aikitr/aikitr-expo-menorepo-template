@@ -7,8 +7,8 @@
     ".": "./base.mjs"
   },
   "dependencies": {
-    "@eslint/js": "10.0.1",
-    "typescript-eslint": "8.71.0"
+    "@eslint/js": "catalog:",
+    "typescript-eslint": "catalog:"
   },
   "peerDependencies": {
     "eslint": "^10.12.0"
