@@ -1,3 +1,3 @@
-import baseConfig from '@repo/eslint-config';
+import baseConfig, { platformAgnosticConfig } from '@repo/eslint-config';
 
-export default baseConfig;
+export default [...baseConfig, platformAgnosticConfig];

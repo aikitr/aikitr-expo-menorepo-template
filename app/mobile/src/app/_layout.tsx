@@ -1,8 +1,10 @@
+import 'react-native-gesture-handler';
 import '../global.css';
 import { ActivityIndicator, View } from 'react-native';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { HeroUINativeProvider } from 'heroui-native/provider';
 import { ThemeProvider, useTheme } from '@/providers/theme-provider';
 
@@ -39,11 +41,13 @@ function Navigation() {
 export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <HeroUINativeProvider>
-        <ThemeProvider>
-          <Navigation />
-        </ThemeProvider>
-      </HeroUINativeProvider>
+      <SafeAreaProvider>
+        <HeroUINativeProvider>
+          <ThemeProvider>
+            <Navigation />
+          </ThemeProvider>
+        </HeroUINativeProvider>
+      </SafeAreaProvider>
     </GestureHandlerRootView>
   );
 }

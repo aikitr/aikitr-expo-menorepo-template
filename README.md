@@ -53,6 +53,8 @@ pnpm --filter @repo/mobile ios
 
 `android/` 与 `ios/` 由 Expo CNG 生成并已忽略，不应提交。微信开发者工具应导入 `app/weapp`，构建输出目录为 `app/weapp/dist`；发布前请在 `project.config.json` 中替换正式 AppID。
 
+发布自有应用前，还应替换 `app/mobile/app.config.ts` 中示例用的 Android package 与 iOS bundle identifier，并通过 `eas init` 绑定自己的 EAS 项目。
+
 ## 页面与功能
 
 - 首页：说明模板能力并连接示例与设置页面

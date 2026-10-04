@@ -7,7 +7,8 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import type { ThemeMode } from '@repo/tokens';
+import Taro from '@tarojs/taro';
+import { colorTokens, type ThemeMode } from '@repo/tokens';
 import { weappStorage } from '@/adapters/storage';
 
 const THEME_STORAGE_KEY = 'settings.theme';
@@ -36,6 +37,20 @@ export function ThemeProvider({ children }: { readonly children?: ReactNode }) {
       active = false;
     };
   }, []);
+
+  useEffect(() => {
+    const colors = colorTokens[theme];
+    void Taro.setNavigationBarColor({
+      frontColor: theme === 'dark' ? '#ffffff' : '#000000',
+      backgroundColor: colors.background,
+    }).catch(() => undefined);
+    void Taro.setTabBarStyle({
+      color: colors.muted,
+      selectedColor: colors.primary,
+      backgroundColor: colors.surface,
+      borderStyle: theme === 'dark' ? 'black' : 'white',
+    }).catch(() => undefined);
+  }, [theme]);
 
   const setTheme = useCallback(async (nextTheme: ThemeMode) => {
     setThemeState(nextTheme);

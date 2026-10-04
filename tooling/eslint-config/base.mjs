@@ -32,4 +32,38 @@ export const baseConfig = tseslint.config(
   },
 );
 
+export const platformAgnosticConfig = {
+  files: ['src/**/*.{ts,tsx}'],
+  rules: {
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: [
+          {
+            group: [
+              'react',
+              'react/*',
+              'react-native',
+              'react-native/*',
+              'expo',
+              'expo-*',
+              'expo/*',
+              '@tarojs/*',
+              '@taroify/*',
+              'heroui-native*',
+              'uniwind',
+              'node:*',
+            ],
+            message: 'Shared runtime packages must remain platform agnostic.',
+          },
+          {
+            group: ['**/app/*/src/**', '**/packages/*/src/**', '@repo/*/src/**'],
+            message: 'Import workspace packages through their public exports.',
+          },
+        ],
+      },
+    ],
+  },
+};
+
 export default baseConfig;
