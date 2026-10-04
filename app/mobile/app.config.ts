@@ -17,7 +17,11 @@ const config: ExpoConfig = {
     package: 'com.example.aikitr.mobile',
     predictiveBackGestureEnabled: true,
   },
-  plugins: ['expo-router', 'expo-dev-client'],
+  plugins: [
+    'expo-router',
+    'expo-dev-client',
+    ['expo-build-properties', { ios: { enableSceneSupport: true } }],
+  ],
   experiments: {
     typedRoutes: true,
   },

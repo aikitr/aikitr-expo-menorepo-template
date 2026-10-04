@@ -39,7 +39,11 @@ export function ExampleListScreen() {
   }, [loadKey]);
 
   return (
-    <Screen title="示例列表" description="数据来自共享 API 客户端，页面只负责呈现状态。">
+    <Screen
+      title="示例列表"
+      description="数据来自共享 API 客户端，页面只负责呈现状态。"
+      bottomNavigation
+    >
       {state.status === 'loading' ? <LoadingState /> : null}
       {state.status === 'error' ? <ErrorState message={state.message} onRetry={retry} /> : null}
       {state.status === 'ready' && state.items.length === 0 ? <EmptyState /> : null}

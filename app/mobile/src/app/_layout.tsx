@@ -29,10 +29,8 @@ function Navigation() {
           headerTintColor: theme === 'dark' ? '#F8FAFC' : '#0F172A',
         }}
       >
-        <Stack.Screen name="index" options={{ title: '首页' }} />
-        <Stack.Screen name="examples/index" options={{ title: '示例' }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="examples/[id]" options={{ title: '示例详情' }} />
-        <Stack.Screen name="settings" options={{ title: '设置' }} />
       </Stack>
     </>
   );
