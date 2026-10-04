@@ -15,7 +15,7 @@ app/mobile/.expo/
 app/mobile/android/
 app/mobile/ios/
 app/weapp/dist/
+app/weapp/.swc/
 
 .DS_Store
 .idea/
-

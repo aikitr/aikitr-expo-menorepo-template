@@ -1,0 +1,96 @@
+@use '@repo/tokens/weapp.scss' as tokens;
+
+page {
+  min-height: 100%;
+  background: tokens.$color-background-light;
+}
+
+.page-shell {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 48px 32px 64px;
+  background: tokens.$color-background-light;
+  color: tokens.$color-text-light;
+}
+
+.page-shell.theme-dark {
+  background: tokens.$color-background-dark;
+  color: tokens.$color-text-dark;
+}
+
+.page-header,
+.page-content,
+.stack,
+.state-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-header {
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.page-content,
+.stack,
+.state-card {
+  gap: 24px;
+}
+
+.page-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.page-description,
+.body-text,
+.state-message,
+.state-error {
+  color: tokens.$color-muted-light;
+  font-size: 30px;
+  line-height: 1.6;
+}
+
+.theme-dark .page-description,
+.theme-dark .body-text,
+.theme-dark .state-message {
+  color: tokens.$color-muted-dark;
+}
+
+.card,
+.state-card {
+  padding: 32px;
+  border: 1px solid tokens.$color-border-light;
+  border-radius: 24px;
+  background: tokens.$color-surface-light;
+}
+
+.theme-dark .card,
+.theme-dark .state-card {
+  border-color: tokens.$color-border-dark;
+  background: tokens.$color-surface-dark;
+}
+
+.card-link:active {
+  opacity: 0.7;
+}
+
+.card-title {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.detail-title {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.state-error {
+  color: tokens.$color-danger-light;
+}
+
+.theme-dark .state-error {
+  color: tokens.$color-danger-dark;
+}

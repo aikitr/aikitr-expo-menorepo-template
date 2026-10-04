@@ -29,4 +29,3 @@
 - Shared runtime packages remain free of React, React Native, Taro, DOM and Node APIs.
 - Workspace imports use public package exports only.
 - Mock mode works without a backend; HTTP mode requires a base URL.
-

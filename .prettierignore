@@ -3,5 +3,6 @@ dist
 coverage
 .expo
 .turbo
+.swc
+app/mobile/src/uniwind-types.d.ts
 pnpm-lock.yaml
-

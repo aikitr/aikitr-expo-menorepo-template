@@ -1,10 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import {
-  ApiError,
-  parseExampleItem,
-  parseExampleItems,
-  type ExampleItem,
-} from './index.js';
+import { ApiError, parseExampleItem, parseExampleItems, type ExampleItem } from './index.js';
 
 describe('example validation', () => {
   it('returns a complete example item', () => {
@@ -23,4 +18,3 @@ describe('example validation', () => {
     expect(() => parseExampleItems({ items: [] })).toThrowError(ApiError);
   });
 });
-

@@ -2,11 +2,12 @@
   "name": "@repo/typescript-config",
   "version": "0.1.0",
   "private": true,
-  "files": ["*.json"],
+  "files": [
+    "*.json"
+  ],
   "exports": {
     "./base.json": "./base.json",
     "./react-native.json": "./react-native.json",
     "./taro.json": "./taro.json"
   }
 }
-

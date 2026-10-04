@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist",
+    "styles"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
-    }
+    },
+    "./mobile.css": "./styles/mobile.css",
+    "./weapp.scss": "./styles/weapp.scss"
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",

@@ -1,9 +1,4 @@
-export type ApiErrorKind =
-  | 'network'
-  | 'timeout'
-  | 'http'
-  | 'invalid-response'
-  | 'cancelled';
+export type ApiErrorKind = 'network' | 'timeout' | 'http' | 'invalid-response' | 'cancelled';
 
 export class ApiError extends Error {
   readonly kind: ApiErrorKind;
