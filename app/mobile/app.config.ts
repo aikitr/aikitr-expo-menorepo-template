@@ -4,6 +4,7 @@ const config: ExpoConfig = {
   name: 'Aikitr Mobile',
   slug: 'aikitr-mobile',
   version: '0.1.0',
+  platforms: ['ios', 'android'],
   orientation: 'portrait',
   scheme: 'aikitr',
   userInterfaceStyle: 'automatic',
