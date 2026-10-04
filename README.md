@@ -116,3 +116,9 @@ Mock 场景由 `@repo/api` 的 `createMockTransport` 提供，可在测试或功
 ## 代码边界
 
 应用只能通过 `@repo/*` 的公开入口使用共享代码。`core`、`api` 和 `tokens` 不依赖 React、React Native、Taro、DOM 或 Node 专属 API；路由、组件、生命周期和平台能力保留在应用内。详细约束见 [架构说明](docs/architecture.md)。
+
+## 团队工程规范
+
+完整规范见 [团队工程规范](docs/engineering-standards.md)，包含目标目录结构、命名、组件接口、依赖边界、两端平台要求、测试和发布流程。规范区分必须、推荐和按需要求；目标结构与质量门禁不表示当前仓库已经全部实现，采用时按规范中的渐进落地步骤执行。
+
+仓库同时提供 [项目级 Skill](.agents/skills/expo-taro-monorepo-standards/SKILL.md)，引用同一份规范正文；[AGENTS.md](AGENTS.md) 为项目开发助手提供入口。规范与 Skill 均通过 Git 维护，团队克隆仓库即可获取，无需依赖作者本机的个人 Skill 目录。修改规范时以仓库版本为准，不维护重复正文。

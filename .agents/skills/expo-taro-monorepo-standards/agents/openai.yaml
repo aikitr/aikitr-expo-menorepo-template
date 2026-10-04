@@ -1,0 +1,4 @@
+interface:
+  display_name: 'Expo 与 Taro Monorepo 工程规范'
+  short_description: '适用于 Expo 原生端与 Taro 微信小程序的目录、组件、依赖边界及交付规范'
+  default_prompt: '使用 $expo-taro-monorepo-standards，根据本次需求应用工程规范，给出文件归属、依赖边界和验证结果。'
